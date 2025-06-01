@@ -1,11 +1,12 @@
+"use client"
+
 import { useEffect, useState } from "react";
-import viteLogo from "/milieux.svg";
 import "./App.css";
 import { socket } from "./socket";
 import DataEntry from "./components/DataEntry";
 import ViewersIcon from "./components/ViewersIcon";
 
-function App() {
+export default function Home() {
   const [solarData, setSolarData] = useState({});
 
   const [isConnected, setIsConnected] = useState(socket.connected);
@@ -38,7 +39,7 @@ function App() {
     <>
       <div>
         <a href="https://minecraftbloc.milieux.ca/sunblock/" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+          <img src={"/milieux.svg"} className="logo" alt="Milieux logo" />
         </a>
       </div>
       <h1>SUNBLOCK ONE</h1>
@@ -113,5 +114,3 @@ function App() {
     </>
   );
 }
-
-export default App;

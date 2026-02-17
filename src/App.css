@@ -1,7 +1,6 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+
   text-align: center;
 }
 
@@ -18,19 +17,10 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.sunblock-number {
+  font-weight: bold;
+  font-size: large;
+  color: white;
 }
 
 .card {
@@ -44,10 +34,26 @@
 .cards-container {
   direction: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
+  min-width: 20%;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center;
+  }
+  .cards-container {
+    min-width: 80%;
+  }
+}
+
 .read-the-docs {
   color: #888;
   margin-top: 100px;
@@ -55,4 +61,10 @@
 
 p {
   margin: 0px;
+}
+
+.border {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
 }

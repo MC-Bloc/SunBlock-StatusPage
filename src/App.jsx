@@ -4,6 +4,7 @@ import "./App.css";
 import { socket_one, socket_two } from "./socket";
 import DataEntry from "./components/DataEntry";
 import ViewersIcon from "./components/ViewersIcon";
+import { Analytics } from "@vercel/analytics/next";
 
 function App() {
   const [solarDataOne, setSolarDataOne] = useState(null);
@@ -144,6 +145,9 @@ function SolarDataCard({ data, title }) {
 
       <DataEntry label={""} data={data?.Timestamp ?? null} timeEntry={true} />
       <ViewersIcon viewerCount={data?.ConnectedUsers ?? "0"} />
+      
+      
+      <Analytics />
     </div>
   );
 }
